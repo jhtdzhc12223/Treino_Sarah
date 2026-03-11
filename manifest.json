@@ -2,20 +2,20 @@
   "name": "Treino da Sara",
   "short_name": "TreinoSara",
   "description": "App de treino personalizado para a Sara - Força, elegância e resultados",
-  "start_url": "/Treino_Sarah/",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#000000",
   "orientation": "portrait",
   "icons": [
     {
-      "src": "/Treino_Sarah/icons/icon-192x192.png",
+      "src": "/icons/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/Treino_Sarah/icons/icon-512x512.png",
+      "src": "/icons/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
