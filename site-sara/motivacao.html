@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivação - Sara</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000">
+</head>
+<body class="pagina-motivacao">
+    <header>
+        <div class="header-bg">
+            <div class="header-overlay"></div>
+            <div class="flower-decoration-left">🌷</div>
+            <div class="flower-decoration-right">⚜️</div>
+        </div>
+        <h1>🖤 Motivação</h1>
+        <p class="subtitulo">Força que vem de dentro 🌷</p>
+    </header>
+
+    <nav class="main-nav">
+        <a href="index.html" class="nav-link">📅 Meu Treino</a>
+        <a href="comentarios.html" class="nav-link">💬 Dicas Especiais</a>
+        <a href="motivacao.html" class="nav-link active">🌟 Motivação</a>
+    </nav>
+
+    <div class="container">
+        <!-- MENSAGENS MOTIVACIONAIS -->
+        <div class="motivacao-grid">
+            <!-- Mensagem 1 -->
+            <div class="motivacao-card">
+                <div class="card-icon">🌷</div>
+                <div class="motivacao-content">
+                    <h3>Força que Floresce</h3>
+                    <p>Como a tulipa que rompe a terra em busca do sol, sua força está florescendo a cada treino. A dor na lombar hoje é um sinal de que seu corpo está pedindo fortalecimento, e você está respondendo com cuidado e determinação.</p>
+                    <div class="motivacao-flower">🌷</div>
+                </div>
+            </div>
+
+            <!-- Mensagem 2 -->
+            <div class="motivacao-card">
+                <div class="card-icon">⚜️</div>
+                <div class="motivacao-content">
+                    <h3>Elegância em Movimento</h3>
+                    <p>Lírios representam pureza e renovação. Cada exercício que você faz é uma renovação do seu compromisso consigo mesma. Seu corpo está aprendendo novos padrões de movimento, e a elegância virá com a prática.</p>
+                    <div class="motivacao-flower">⚜️</div>
+                </div>
+            </div>
+
+            <!-- Mensagem 3 -->
+            <div class="motivacao-card">
+                <div class="card-icon">🖤</div>
+                <div class="motivacao-content">
+                    <h3>Preto: Força e Sofisticação</h3>
+                    <p>O preto é a cor da força silenciosa, da elegância que não precisa gritar. É assim que você está construindo seu corpo: com a força tranquila de quem sabe que cada repetição, por mais simples que pareça, está te transformando.</p>
+                    <div class="motivacao-flower">🌷</div>
+                </div>
+            </div>
+
+            <!-- Mensagem 4 -->
+            <div class="motivacao-card">
+                <div class="card-icon">🔴</div>
+                <div class="motivacao-content">
+                    <h3>Vermelho: Paixão e Cuidado</h3>
+                    <p>O vermelho discreto no seu site representa a paixão pelos seus objetivos, mas também o cuidado para não se machucar. É a cor do alerta: "respeite seus limites, mas nunca desista de evoluir".</p>
+                    <div class="motivacao-flower">⚜️</div>
+                </div>
+            </div>
+
+            <!-- Mensagem 5 -->
+            <div class="motivacao-card">
+                <div class="card-icon">🌸</div>
+                <div class="motivacao-content">
+                    <h3>Rosa: Delicadeza e Poder</h3>
+                    <p>O rosa é a lembrança de que você pode ser forte sem perder a delicadeza. Pode treinar pesado sem perder a feminilidade. Pode suar na academia e ainda assim ser a mulher elegante que sempre foi.</p>
+                    <div class="motivacao-flower">🌷</div>
+                </div>
+            </div>
+
+            <!-- Mensagem 6 -->
+            <div class="motivacao-card">
+                <div class="card-icon">👑</div>
+                <div class="motivacao-content">
+                    <h3>Rainha do seu Corpo</h3>
+                    <p>Você não está apenas levantando pesos, está construindo um trono. Cada glúteo fortalecido é um degrau, cada braço afinado é um detalhe da sua coroa, cada postura corrigida é um gesto de rainha.</p>
+                    <div class="motivacao-flower">⚜️</div>
+                </div>
+            </div>
+
+            <!-- Mensagem 7 - Especial para a dor lombar -->
+            <div class="motivacao-card card-destaque">
+                <div class="card-icon">💪</div>
+                <div class="motivacao-content">
+                    <h3>Sobre sua Lombar</h3>
+                    <p>Sua amiga que teve o mesmo problema entende: no começo é difícil, mas cada treino fortalece a região. O coice substituiu a elevação pélvica com um propósito: proteger você. Confie no processo, respeite seu corpo, os resultados virão.</p>
+                    <div class="motivacao-flower">🌷</div>
+                </div>
+            </div>
+
+            <!-- Mensagem 8 -->
+            <div class="motivacao-card">
+                <div class="card-icon">🎯</div>
+                <div class="motivacao-content">
+                    <h3>Glúteo, Pernas, Braços</h3>
+                    <p>Cada área que você quer evoluir tem um propósito: glúteo forte protege sua lombar, pernas fortes sustentam seu corpo, braços afinados são a expressão da sua dedicação. Você não está só "malhando", está se reconstruindo.</p>
+                    <div class="motivacao-flower">⚜️</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FRASE DO DIA -->
+        <div class="frase-diaria">
+            <div class="frase-header">
+                <div class="flower-small">🌷</div>
+                <h2>💫 Frase do Dia</h2>
+            </div>
+            <div class="frase-content">
+                <p id="fraseAtual">"Como a tulipa que floresce na terra mais escura, sua força está nascendo nos treinos mais desafiadores."</p>
+                <button onclick="novaFrase()" class="btn-nova-frase">Nova Frase 🌷</button>
+            </div>
+        </div>
+
+        <!-- CONTADOR DE PROGRESSO -->
+        <div class="contador-motivacional">
+            <div class="contador-header">
+                <div class="flower-small">🌷</div>
+                <h2>📈 Seu Progresso</h2>
+            </div>
+            <div class="contador-content">
+                <div class="contador-item">
+                    <span class="contador-numero" id="diasTreino">0</span>
+                    <span class="contador-texto">Dias de Treino</span>
+                </div>
+                <div class="contador-item">
+                    <span class="contador-numero" id="exerciciosCompletos">0</span>
+                    <span class="contador-texto">Exercícios Concluídos</span>
+                </div>
+                <div class="contador-item">
+                    <span class="contador-numero" id="metasAlcancadas">0</span>
+                    <span class="contador-texto">Metas Alcançadas</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- LEMBRETE ESPECIAL -->
+        <div class="lembrete-card">
+            <div class="lembrete-header">
+                <span>🌷</span>
+                <span>⚜️</span>
+                <span>🌷</span>
+            </div>
+            <div class="lembrete-content">
+                <h3>Para você, Sara</h3>
+                <p>"A dor que você sente hoje na lombar é o sinal de que seu corpo precisa de fortalecimento. A cada coice na máquina, a cada abdutora, a cada step-up, você está construindo a proteção que sua lombar merece. Sua amiga que teve o mesmo problema sabe: vale a pena persistir. Respeite seus limites, mas nunca duvide da sua capacidade de superação."</p>
+                <p class="lembrete-assinatura">Com carinho, quem fez esse site pra você 🌷</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-flowers">
+            <span>🌷</span>
+            <span>⚜️</span>
+            <span>🌷</span>
+        </div>
+        <p>Lembre-se: cada esforço te aproxima da mulher forte e elegante que você está se tornando! 🖤</p>
+    </footer>
+
+    <script src="script-motivacao.js"></script>
+</body>
+</html>

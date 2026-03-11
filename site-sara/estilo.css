@@ -1,0 +1,1056 @@
+/* estilo.css - Tema Sara: Preto, Rosa e Vermelho com Tulipas e Lírios */
+:root {
+    --preto: #000000;
+    --preto-suave: #1a1a1a;
+    --preto-claro: #2d2d2d;
+    --rosa-escuro: #c2185b;
+    --rosa-medio: #e91e63;
+    --rosa-claro: #f8bbd0;
+    --rosa-suave: #fce4ec;
+    --vermelho-escuro: #b71c1c;
+    --vermelho-medio: #d32f2f;
+    --vermelho-suave: #ffcdd2;
+    --branco: #ffffff;
+    --cinza-claro: #f5f5f5;
+    --cinza-medio: #e0e0e0;
+    --cinza-escuro: #9e9e9e;
+    --texto: #212121;
+    --texto-claro: #757575;
+    --sombra-preta: rgba(0, 0, 0, 0.2);
+    --sombra-rosa: rgba(233, 30, 99, 0.2);
+    --sombra-vermelha: rgba(211, 47, 47, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--branco);
+    color: var(--texto);
+    line-height: 1.6;
+    padding-bottom: 60px;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* FUNDO ESPECIAL PARA PÁGINA INDEX (Tulipas e Lírios) */
+.pagina-index {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.03"><defs><pattern id="tulipas-lirios" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><text x="10" y="20" font-size="20" fill="%23c2185b" text-anchor="middle">🌷</text><text x="30" y="35" font-size="20" fill="%23d32f2f" text-anchor="middle">⚜️</text></pattern></defs><rect width="100" height="100" fill="url(%23tulipas-lirios)"/></svg>');
+    background-attachment: fixed;
+}
+
+/* FUNDO PARA PÁGINAS COMENTÁRIOS E MOTIVAÇÃO */
+.pagina-comentarios, .pagina-motivacao {
+    background: linear-gradient(135deg, var(--branco) 0%, var(--cinza-claro) 100%);
+    position: relative;
+}
+
+.pagina-comentarios::before, .pagina-motivacao::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.02"><defs><pattern id="flores-bg" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse"><text x="15" y="25" font-size="16" fill="%23c2185b" text-anchor="middle">🌷</text><text x="35" y="40" font-size="16" fill="%23d32f2f" text-anchor="middle">⚜️</text></pattern></defs><rect width="100" height="100" fill="url(%23flores-bg)"/></svg>');
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Tela de carregamento */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--preto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.loading-content {
+    text-align: center;
+    max-width: 400px;
+    padding: 40px 30px;
+    background: var(--branco);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    margin: 20px;
+    border: 2px solid var(--rosa-medio);
+}
+
+.loading-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    animation: pulse 1.5s infinite;
+    display: block;
+    filter: drop-shadow(0 2px 4px var(--sombra-rosa));
+}
+
+.loading-text {
+    color: var(--preto);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.loading-bar {
+    width: 100%;
+    height: 8px;
+    background-color: var(--cinza-medio);
+    border-radius: 10px;
+    margin-top: 25px;
+    overflow: hidden;
+}
+
+.loading-progress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(to right, var(--rosa-medio), var(--vermelho-medio));
+    border-radius: 10px;
+    animation: loading 2s ease-in-out forwards;
+}
+
+@keyframes loading {
+    0% { width: 0%; }
+    100% { width: 100%; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1) rotate(0deg); opacity: 0.8; }
+    50% { transform: scale(1.1) rotate(5deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0deg); opacity: 0.8; }
+}
+
+/* Header com tema preto */
+header {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.header-bg {
+    height: 200px;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--preto) 0%, var(--preto-suave) 100%);
+    position: relative;
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 10px 30px var(--sombra-preta);
+}
+
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><defs><pattern id="header-flowers" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse"><text x="15" y="20" font-size="10" fill="%23ffffff" text-anchor="middle">🌷</text><text x="25" y="25" font-size="10" fill="%23ffffff" text-anchor="middle">⚜️</text></pattern></defs><rect width="100" height="100" fill="url(%23header-flowers)"/></svg>');
+}
+
+.flower-decoration-left {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    font-size: 2.5rem;
+    opacity: 0.3;
+    animation: floatLeft 4s ease-in-out infinite;
+}
+
+.flower-decoration-right {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 2.5rem;
+    opacity: 0.3;
+    animation: floatRight 4s ease-in-out infinite;
+}
+
+@keyframes floatLeft {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(-5deg); }
+}
+
+@keyframes floatRight {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.8rem;
+    text-align: center;
+    color: var(--branco);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    padding: 0 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.subtitulo {
+    position: absolute;
+    top: 72%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--rosa-claro);
+    width: 100%;
+    padding: 0 20px;
+    font-weight: 500;
+}
+
+/* Navegação */
+.main-nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35px;
+    padding: 0 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    background: var(--branco);
+    color: var(--preto);
+    padding: 15px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 2px solid var(--cinza-medio);
+    box-shadow: 0 5px 15px var(--sombra-preta);
+    position: relative;
+    overflow: hidden;
+    font-size: 1.1rem;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, var(--rosa-claro), transparent);
+    transition: left 0.6s;
+}
+
+.nav-link:hover::before {
+    left: 100%;
+}
+
+.nav-link.active {
+    background: linear-gradient(135deg, var(--preto), var(--preto-suave));
+    color: var(--branco);
+    border-color: var(--rosa-medio);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
+}
+
+.nav-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border-color: var(--rosa-medio);
+}
+
+/* Container */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.dia-treino {
+    margin-bottom: 30px;
+    animation: fadeInUp 0.6s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Cards com tema preto/rosa/vermelho */
+.card-header {
+    background: linear-gradient(135deg, var(--preto), var(--preto-suave));
+    color: var(--branco);
+    padding: 20px 20px 20px 60px;
+    border-radius: 15px 15px 0 0;
+    margin-bottom: 0;
+    box-shadow: 0 8px 20px var(--sombra-preta);
+    border-bottom: 3px solid var(--rosa-medio);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--rosa-medio), var(--vermelho-medio));
+}
+
+.flower-small {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    opacity: 0.8;
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--branco);
+}
+
+.exercicios {
+    background: var(--branco);
+    border-radius: 0 0 15px 15px;
+    padding: 25px;
+    box-shadow: 0 10px 25px var(--sombra-preta);
+    border: 2px solid var(--cinza-medio);
+    border-top: none;
+    position: relative;
+}
+
+/* Exercícios */
+.exercicio {
+    display: flex;
+    align-items: center;
+    padding: 18px;
+    border-bottom: 2px dashed var(--cinza-medio);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    background: var(--branco);
+    position: relative;
+}
+
+.exercicio:hover {
+    background: var(--cinza-claro);
+    transform: translateX(8px);
+    border-left: 4px solid var(--rosa-medio);
+    box-shadow: 0 5px 15px var(--sombra-rosa);
+}
+
+.exercicio:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.ordem {
+    background: linear-gradient(135deg, var(--preto), var(--preto-suave));
+    color: var(--branco);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-right: 20px;
+    flex-shrink: 0;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px var(--sombra-preta);
+    border: 2px solid var(--rosa-medio);
+}
+
+.nome {
+    flex: 1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--preto);
+}
+
+.nome small {
+    color: var(--texto-claro);
+    font-size: 0.9rem;
+    display: block;
+    margin-top: 6px;
+    font-weight: 400;
+}
+
+.dica-icon {
+    background: linear-gradient(135deg, var(--preto), var(--preto-suave));
+    color: var(--branco);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px var(--sombra-preta);
+    border: 2px solid var(--rosa-medio);
+}
+
+.dica-icon:hover {
+    background: var(--rosa-medio);
+    color: var(--preto);
+    transform: scale(1.1) rotate(8deg);
+    box-shadow: 0 6px 15px var(--sombra-rosa);
+}
+
+/* Exercícios completos */
+.exercicio.completo {
+    background: linear-gradient(135deg, var(--rosa-suave), var(--cinza-claro));
+    border-left: 4px solid var(--vermelho-medio);
+    opacity: 0.9;
+}
+
+.exercicio.completo .ordem {
+    background: linear-gradient(135deg, var(--rosa-medio), var(--vermelho-medio));
+    border-color: var(--branco);
+}
+
+/* AVISO CARD */
+.aviso-card {
+    background: linear-gradient(135deg, var(--preto), var(--preto-suave));
+    border-radius: 15px;
+    padding: 25px;
+    margin: 30px 0;
+    box-shadow: 0 10px 25px var(--sombra-preta);
+    border-left: 5px solid var(--vermelho-medio);
+    color: var(--branco);
+}
+
+.aviso-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--cinza-escuro);
+    padding-bottom: 15px;
+}
+
+.aviso-icon {
+    font-size: 2rem;
+}
+
+.aviso-header h3 {
+    color: var(--branco);
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.aviso-content p {
+    margin-bottom: 15px;
+    color: var(--cinza-medio);
+}
+
+.aviso-content .destaque {
+    color: var(--rosa-claro);
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-left: 3px solid var(--vermelho-medio);
+    padding-left: 15px;
+}
+
+/* Comentários */
+.comentarios-lista {
+    padding: 20px;
+}
+
+.comentario-item {
+    padding: 25px;
+    border-bottom: 1px solid var(--cinza-medio);
+    background: var(--branco);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--rosa-medio);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 3px 10px var(--sombra-preta);
+}
+
+.comentario-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px var(--sombra-rosa);
+}
+
+.comentario-item:last-child {
+    margin-bottom: 0;
+}
+
+.comentario-item h3 {
+    color: var(--preto);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    border-bottom: 2px solid var(--rosa-claro);
+    padding-bottom: 8px;
+}
+
+.comentario-item p {
+    line-height: 1.7;
+    color: var(--texto);
+    font-size: 1rem;
+}
+
+.comentario-item p strong {
+    color: var(--vermelho-medio);
+}
+
+.comentario-item em {
+    color: var(--rosa-escuro);
+    font-style: italic;
+    display: block;
+    margin-top: 10px;
+}
+
+/* ===== MOTIVAÇÃO ===== */
+.motivacao-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.motivacao-card {
+    background: linear-gradient(135deg, var(--branco), var(--cinza-claro));
+    border-radius: 20px;
+    padding: 30px 25px;
+    box-shadow: 0 10px 25px var(--sombra-preta);
+    border: 2px solid var(--cinza-medio);
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    border-top: 5px solid var(--rosa-medio);
+}
+
+.motivacao-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px var(--sombra-rosa);
+    border-color: var(--rosa-medio);
+}
+
+.card-destaque {
+    border-top: 5px solid var(--vermelho-medio);
+    background: linear-gradient(135deg, var(--cinza-claro), var(--branco));
+}
+
+.card-icon {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.motivacao-content {
+    text-align: center;
+    position: relative;
+}
+
+.motivacao-content h3 {
+    color: var(--preto);
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.motivacao-content p {
+    color: var(--texto);
+    line-height: 1.7;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.motivacao-flower {
+    font-size: 1.8rem;
+    opacity: 0.7;
+    animation: gentlePulse 3s ease-in-out infinite;
+}
+
+@keyframes gentlePulse {
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.7; }
+    50% { transform: scale(1.1) rotate(5deg); opacity: 1; }
+}
+
+/* Frase do Dia */
+.frase-diaria {
+    background: linear-gradient(135deg, var(--preto), var(--preto-suave));
+    border-radius: 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px var(--sombra-preta);
+    overflow: hidden;
+}
+
+.frase-header {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid var(--cinza-escuro);
+}
+
+.frase-header h2 {
+    color: var(--branco);
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.frase-content {
+    padding: 40px 30px;
+    text-align: center;
+}
+
+#fraseAtual {
+    color: var(--branco);
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    font-style: italic;
+}
+
+.btn-nova-frase {
+    background: linear-gradient(135deg, var(--rosa-medio), var(--vermelho-medio));
+    color: var(--branco);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-nova-frase:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, var(--vermelho-medio), var(--rosa-medio));
+}
+
+/* Contador Motivacional */
+.contador-motivacional {
+    background: var(--branco);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 25px var(--sombra-preta);
+    border: 2px solid var(--cinza-medio);
+    margin-bottom: 30px;
+}
+
+.contador-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--rosa-claro);
+}
+
+.contador-header h2 {
+    color: var(--preto);
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.contador-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.contador-item {
+    text-align: center;
+    padding: 20px;
+    background: var(--cinza-claro);
+    border-radius: 15px;
+    border: 1px solid var(--cinza-medio);
+}
+
+.contador-numero {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--vermelho-medio);
+    margin-bottom: 8px;
+}
+
+.contador-texto {
+    color: var(--texto-claro);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* Lembrete Especial */
+.lembrete-card {
+    background: linear-gradient(135deg, var(--branco), var(--cinza-claro));
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 25px var(--sombra-preta);
+    border: 2px solid var(--rosa-medio);
+    margin: 40px 0;
+    text-align: center;
+}
+
+.lembrete-header {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.lembrete-content h3 {
+    color: var(--preto);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.lembrete-content p {
+    color: var(--texto);
+    line-height: 1.8;
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto 15px;
+}
+
+.lembrete-assinatura {
+    color: var(--rosa-escuro);
+    font-style: italic;
+    margin-top: 20px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: linear-gradient(135deg, var(--branco), var(--cinza-claro));
+    margin: 10% auto;
+    padding: 30px;
+    border: 3px solid var(--rosa-medio);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.close {
+    color: var(--cinza-escuro);
+    float: right;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s ease;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+.close:hover {
+    color: var(--vermelho-medio);
+}
+
+.modal-flower {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+#dicaTexto {
+    margin-top: 15px;
+    line-height: 1.6;
+    color: var(--texto);
+    font-size: 1.1rem;
+    padding: 15px;
+    background: var(--branco);
+    border-radius: 12px;
+    border-left: 4px solid var(--rosa-medio);
+    box-shadow: 0 3px 10px var(--sombra-rosa);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 50px;
+    color: var(--texto-claro);
+    font-weight: 500;
+    border-top: 2px solid var(--cinza-medio);
+    background: var(--branco);
+    border-radius: 30px 30px 0 0;
+    box-shadow: 0 -5px 20px var(--sombra-preta);
+    position: relative;
+}
+
+.footer-flowers {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-size: 2rem;
+    opacity: 0.7;
+    animation: gentlePulse 4s ease-in-out infinite;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--cinza-claro);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--preto), var(--preto-suave));
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, var(--rosa-medio), var(--vermelho-medio));
+}
+
+/* Seleção de texto */
+::selection {
+    background: var(--rosa-medio);
+    color: var(--branco);
+}
+
+::-moz-selection {
+    background: var(--rosa-medio);
+    color: var(--branco);
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+    .header-bg {
+        height: 160px;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    .subtitulo {
+        font-size: 1rem;
+        top: 75%;
+    }
+    
+    .main-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .nav-link {
+        width: 90%;
+        text-align: center;
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+    
+    .exercicio {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+    
+    .ordem {
+        margin-bottom: 10px;
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .nome {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    
+    .dica-icon {
+        align-self: flex-end;
+        margin-top: 5px;
+        width: 35px;
+        height: 35px;
+    }
+    
+    .card-header {
+        padding: 15px 15px 15px 50px;
+    }
+    
+    .card-header h2 {
+        font-size: 1.2rem;
+    }
+    
+    .flower-small {
+        left: 15px;
+        font-size: 1.3rem;
+    }
+    
+    .flower-decoration-left, .flower-decoration-right {
+        font-size: 2rem;
+    }
+    
+    .motivacao-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .frase-content {
+        padding: 30px 20px;
+    }
+    
+    #fraseAtual {
+        font-size: 1.2rem;
+    }
+    
+    .contador-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .contador-numero {
+        font-size: 2rem;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 20% auto;
+        padding: 20px;
+    }
+    
+    .loading-content {
+        padding: 30px 20px;
+        margin: 15px;
+    }
+    
+    .loading-icon {
+        font-size: 3rem;
+    }
+    
+    .comentario-item {
+        padding: 20px;
+    }
+    
+    .comentario-item h3 {
+        font-size: 1.2rem;
+    }
+    
+    .aviso-card {
+        padding: 20px;
+    }
+    
+    .aviso-header h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-bg {
+        height: 140px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .subtitulo {
+        font-size: 0.9rem;
+        top: 78%;
+    }
+    
+    .nav-link {
+        padding: 10px 15px;
+        font-size: 0.95rem;
+    }
+    
+    .ordem {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+    
+    .dica-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+    
+    .card-header h2 {
+        font-size: 1.1rem;
+    }
+    
+    .motivacao-card {
+        padding: 25px 20px;
+    }
+    
+    .motivacao-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .btn-nova-frase {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+    
+    .contador-item {
+        padding: 15px;
+    }
+    
+    .contador-numero {
+        font-size: 1.8rem;
+    }
+    
+    .lembrete-content p {
+        font-size: 1rem;
+    }
+}
